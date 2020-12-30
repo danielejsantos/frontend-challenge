@@ -1,0 +1,49 @@
+{
+  "overdue": [
+    {
+      "activity": "Ligação de agendamento da reunião",
+      "name": "Erica Collins",
+      "time": "Em atraso por 04 dias"
+    }
+  ],
+  "in_progress": [{}],
+  "scheduled": [
+    {
+      "activity": "Reunião orçamento",
+      "name": "Abigail Fisher",
+      "time": "Hoje às 15h"
+    },
+    {
+      "activity": "Email documentação",
+      "name": "Jeffery King",
+      "time": "Amanhã às 09:45"
+    },
+    {
+      "activity": "Almoço coorporativo",
+      "name": "Lawrence Kelly",
+      "time": "Amanhã às 15h"
+    }
+  ],
+  "concluded": [
+    {
+      "activity": "Apresentação feira agrícola",
+      "name": "Caroline Diaz",
+      "time": "Segunda-feira (17/09/2018) às 08h"
+    },
+    {
+      "activity": "Email orçamento",
+      "name": "Arthur Clark",
+      "time": "Terça-feira (19/09/2018) às 10h"
+    },
+    {
+      "activity": "Email contrato",
+      "name": "Frieda Howard",
+      "time": "Quarta-feira (19/09/2018) às 10h"
+    },
+    {
+      "activity": "Ligação contrato",
+      "name": "Dylan Watsor",
+      "time": "Quarta-feira (19/09/2018) às 13h"
+    }
+  ]
+}
