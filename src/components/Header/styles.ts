@@ -15,5 +15,4 @@ export const MenuIcon = styled(FiMenu)`
   color: #fff;
   width: 22px;
   height: 22px;
-  
 `;
