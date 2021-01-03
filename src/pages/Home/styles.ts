@@ -20,7 +20,7 @@ export const CustomerInfo = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr) 2fr;
   grid-template-rows: repeat(3, 1fr);
-  gap: 5px 5px;
+  gap: 10px 10px;
   grid-template-areas:
     "info local activities"
     "opportunities credit activities"
