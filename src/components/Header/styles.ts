@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { FiMenu } from "react-icons/fi";
 
 export const Container = styled.div`
-  width: 100vw;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: flex-start;

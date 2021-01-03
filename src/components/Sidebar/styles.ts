@@ -15,7 +15,7 @@ import { MdAttachMoney } from 'react-icons/md';
 import { RiFileChartLine, RiMoneyDollarBoxLine } from 'react-icons/ri';
 
 export const Container = styled.div`
-  height: 100vh;
+  height: 100%;
   width: 46px;
   display: flex;
   flex-direction: column;

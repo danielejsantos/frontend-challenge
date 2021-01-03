@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
 
-import { 
-  Container, 
+import {
+  Container,
   BlocksIcon,
   DatabaseIcon,
   PaperIcon,
@@ -17,7 +17,7 @@ import {
   MoneyIcon,
   PaperChartIcon,
   DollarBoxIcon,
-} from './styles';
+} from "./styles";
 
 const Sidebar: React.FC = () => {
   return (
@@ -39,6 +39,6 @@ const Sidebar: React.FC = () => {
       <PeopleIcon />
     </Container>
   );
-}
+};
 
 export default Sidebar;

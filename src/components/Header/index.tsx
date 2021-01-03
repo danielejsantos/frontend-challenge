@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 
-import { Container, MenuIcon } from './styles';
+import { Container, MenuIcon } from "./styles";
 
 const Header: React.FC = () => {
   return (
@@ -8,6 +8,6 @@ const Header: React.FC = () => {
       <MenuIcon />
     </Container>
   );
-}
+};
 
 export default Header;
