@@ -23,6 +23,7 @@ export const Container = styled.div`
   justify-content: space-around;
   background-color: #fafafa;
   box-shadow: 5px 0 5px -5px #cccccc;
+  position: fixed;
 `;
 
 const iconCSS = css`

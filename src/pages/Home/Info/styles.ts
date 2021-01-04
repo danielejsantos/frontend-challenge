@@ -11,7 +11,13 @@ import {
 } from 'react-icons/fa';
 import { MdEmail } from 'react-icons/md';
 
+export const Container = styled.div`
+  grid-area: info;
+  height: 100%;
+`;
+
 export const Wrapper = styled.div`
+  height: 100%;
   display: flex;
   flex-direction: column;
 `;
@@ -121,6 +127,8 @@ export const SmallText = styled(Text)`
 
 export const SocialWrapper = styled.div`
   width: 100%;
+  height: 100%;
   display: flex;
   justify-content: flex-end;
+  bottom: 0;
 `;

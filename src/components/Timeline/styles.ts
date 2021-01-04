@@ -29,7 +29,7 @@ export const Circle = styled.div<CircleProps>`
 export const Line = styled.div`
   height: 100%;
   width: 2px;
-  background-color: grey;
+  background-color: lightgrey;
 `;
 
 export const ActivityContainer = styled.div`
@@ -42,7 +42,7 @@ export const ActivityTitle = styled.p`
   color: grey;
   font-weight: 700;
   margin-top: 2px;
-  margin-bottom: 10px;
+  margin-bottom: 16px;
 `;
 
 export const InfoContainer = styled.div`

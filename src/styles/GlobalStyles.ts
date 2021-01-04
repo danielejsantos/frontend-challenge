@@ -14,5 +14,9 @@ export default createGlobalStyle`
     border: 0;
     background: none;
     font-family: 'Lato', sans-serif;
+
+    &:focus {
+    outline: none;
+  }
   }
 `;
