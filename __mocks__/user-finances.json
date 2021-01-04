@@ -1,10 +1,22 @@
 {
-  "oportunities": {
-    "win": "R$20.000,00",
-    "lost": "R$4.300,00",
-    "open": "Diversas moedas",
-    "discarded": "-"
-  },
+  "oportunities": [
+    {
+      "name": "win",
+      "value": "R$20.000,00"
+    },
+    {
+      "name": "lost",
+      "value": "R$4.300,00"
+    },
+    {
+      "name": "open",
+      "value": "Diversas moedas"
+    },
+    {
+      "name": "discarded",
+      "value": "-"
+    }
+  ],
   "credit": {
     "granted": "R$12.000,00",
     "available": "R$3.105,00"

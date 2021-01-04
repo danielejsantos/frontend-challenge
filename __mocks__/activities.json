@@ -1,49 +1,74 @@
 {
-  "overdue": [
+  "data": [
     {
-      "activity": "Ligação de agendamento da reunião",
-      "name": "Erica Collins",
-      "time": "Em atraso por 04 dias"
+      "id": 1,
+      "color": "red",
+      "title": "Atividades em atraso",
+      "activities": [
+        {
+          "id": 1,
+          "icon": "phone",
+          "title": "Ligação de agendamento de reunião",
+          "name": "Erica Collins",
+          "time": "Em atraso por 04 dias"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "color": "yellow",
+      "title": "Atividades previstas",
+      "activities": [
+        {
+          "id": 1,
+          "Icon": "group",
+          "title": "Reunião orçamento",
+          "name": "Abigail Fisher",
+          "time": "Hoje às 15h"
+        },
+        {
+          "id": 2,
+          "Icon": "email",
+          "title": "Email documentação",
+          "name": "Jeffery King",
+          "time": "Amanhã às 09:45"
+        },
+        {
+          "id": 3,
+          "Icon": "calendar",
+          "title": "Almoço corporativo",
+          "name": "Lawrence Kelly",
+          "time": "Amanhã às 15h"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "color": "green",
+      "title": "Atividades concluídas",
+      "activities": [
+        {
+          "id": 1,
+          "Icon": "calendar",
+          "title": "Apresentação feira agricola",
+          "name": "Caroline Diaz",
+          "time": "Segunda-feira (17/09/2018) às 08h"
+        },
+        {
+          "id": 2,
+          "Icon": "email",
+          "title": "Email orçamento",
+          "name": "Arthur Clark",
+          "time": "Terça-feira (18/09/2018) às 13h"
+        },
+        {
+          "id": 3,
+          "Icon": "phone",
+          "title": "Ligação contrato",
+          "name": "Dylan Watsor",
+          "time": "Quarta-feira (19/09/2018) às 13h"
+        }
+      ]
     }
-  ],
-  "in_progress": [{}],
-  "scheduled": [
-    {
-      "activity": "Reunião orçamento",
-      "name": "Abigail Fisher",
-      "time": "Hoje às 15h"
-    },
-    {
-      "activity": "Email documentação",
-      "name": "Jeffery King",
-      "time": "Amanhã às 09:45"
-    },
-    {
-      "activity": "Almoço coorporativo",
-      "name": "Lawrence Kelly",
-      "time": "Amanhã às 15h"
-    }
-  ],
-  "concluded": [
-    {
-      "activity": "Apresentação feira agrícola",
-      "name": "Caroline Diaz",
-      "time": "Segunda-feira (17/09/2018) às 08h"
-    },
-    {
-      "activity": "Email orçamento",
-      "name": "Arthur Clark",
-      "time": "Terça-feira (19/09/2018) às 10h"
-    },
-    {
-      "activity": "Email contrato",
-      "name": "Frieda Howard",
-      "time": "Quarta-feira (19/09/2018) às 10h"
-    },
-    {
-      "activity": "Ligação contrato",
-      "name": "Dylan Watsor",
-      "time": "Quarta-feira (19/09/2018) às 13h"
-    }
-  ]
+  ]  
 }
