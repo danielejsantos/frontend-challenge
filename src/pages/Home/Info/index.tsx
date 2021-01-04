@@ -4,6 +4,7 @@ import Section from "../../../components/Section";
 import SectionTitle from "../../../components/SectionTitle";
 
 import {
+  Container,
   Wrapper,
   ProfileContainer,
   AvatarWrapper,
@@ -27,47 +28,49 @@ import {
 
 const Info: React.FC = () => {
   return (
-    <Section>
-      <Wrapper>
-        <SectionTitle title={"Informações gerais"} />
-        <ProfileContainer>
-          <AvatarWrapper>
-            <Avatar />
-          </AvatarWrapper>
-          <ProfileInfo>
-            <CustomerName>Justine Robinson</CustomerName>
-            <Text>Acme inc</Text>
-            <ActiveStatus>
-              <p>Ativo</p>
-            </ActiveStatus>
-          </ProfileInfo>
-        </ProfileContainer>
+    <Container>
+      <Section>
+        <Wrapper>
+          <SectionTitle title="Informações gerais" />
+          <ProfileContainer>
+            <AvatarWrapper>
+              <Avatar />
+            </AvatarWrapper>
+            <ProfileInfo>
+              <CustomerName>Justine Robinson</CustomerName>
+              <Text>Acme inc</Text>
+              <ActiveStatus>
+                <p>Ativo</p>
+              </ActiveStatus>
+            </ProfileInfo>
+          </ProfileContainer>
 
-        <ContactContainer>
-          <PhoneIcon />
-          <ContactWrapper>
-            <Text>45 9 9555 5555</Text>
-            <SmallText>Celular</SmallText>
-          </ContactWrapper>
-        </ContactContainer>
+          <ContactContainer>
+            <PhoneIcon />
+            <ContactWrapper>
+              <Text>45 9 9555 5555</Text>
+              <SmallText>Celular</SmallText>
+            </ContactWrapper>
+          </ContactContainer>
 
-        <ContactContainer>
-          <EmailIcon />
-          <ContactWrapper>
-            <Text>justine@email.com</Text>
-            <SmallText>Trabalho</SmallText>
-          </ContactWrapper>
-        </ContactContainer>
+          <ContactContainer>
+            <EmailIcon />
+            <ContactWrapper>
+              <Text>justine@email.com</Text>
+              <SmallText>Trabalho</SmallText>
+            </ContactWrapper>
+          </ContactContainer>
 
-        <SocialWrapper>
-          <WhatsappIcon />
-          <FacebookIcon />
-          <InstagramIcon />
-          <TwitterIcon />
-          <LinkedinIcon />
-        </SocialWrapper>
-      </Wrapper>
-    </Section>
+          <SocialWrapper>
+            <WhatsappIcon />
+            <FacebookIcon />
+            <InstagramIcon />
+            <TwitterIcon />
+            <LinkedinIcon />
+          </SocialWrapper>
+        </Wrapper>
+      </Section>
+    </Container>
   );
 };
 
