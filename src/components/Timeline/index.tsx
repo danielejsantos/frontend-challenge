@@ -27,7 +27,7 @@ const Timeline: React.FC<TimelineProps> = ({
     <ActivityContainer>
       <ActivityTitle>{title}</ActivityTitle>
       {activities.map((activity: Activity) => (
-        <InfoContainer>
+        <InfoContainer key={activity.id}>
           <activity.Icon />
           <DetailsContainer>
             <Name>{activity.title}</Name>

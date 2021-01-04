@@ -1,4 +1,5 @@
 export interface Activity {
+  id: number;
   Icon: React.ComponentType;
   title: string;
   name: string;
