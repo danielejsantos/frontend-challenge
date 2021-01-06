@@ -8,6 +8,7 @@ import useOpportunities from "./hooks";
 
 import {
   Container,
+  Wrapper,
   TitleWrapper,
   InfoIcon,
   OpportunitiesWrapper,
@@ -17,57 +18,38 @@ import {
   ValueText,
   SeeAll,
 } from "./styles";
+import { Opportunity } from "./types";
 
 const Opportunities: React.FC = () => {
-  const { titles } = useOpportunities();
+  const { opportunities, mapOppotunities } = useOpportunities();
 
   return (
     <Container>
       <Section>
-        <TitleWrapper>
-          <SectionTitle title="Oportunidades (7)" />
-          <InfoIcon />
-        </TitleWrapper>
+        <Wrapper>
+          <TitleWrapper>
+            <SectionTitle title="Oportunidades (7)" />
+            <InfoIcon />
+          </TitleWrapper>
+          <OpportunitiesWrapper>
+            {opportunities.map((opportunity: Opportunity) => (
+              <ItemWrapper key={opportunity.name}>
+                <SquareNumber
+                  number={Number(opportunity.amount)}
+                  color={mapOppotunities(opportunity.name).color}
+                />
+                <ValueWrapper>
+                  <Text>{mapOppotunities(opportunity.name).name}</Text>
+                  <ValueText>{opportunity.value}</ValueText>
+                </ValueWrapper>
+              </ItemWrapper>
+            ))}
+          </OpportunitiesWrapper>
 
-        <OpportunitiesWrapper>
-          {titles.map((title) => (
-            <ItemWrapper>
-              <SquareNumber number={4} color="green" />
-              <ValueWrapper>
-                <Text>{title}</Text>
-                <ValueText>R$ 20.000,00</ValueText>
-              </ValueWrapper>
-            </ItemWrapper>
-          ))}
-
-          <ItemWrapper>
-            <SquareNumber number={1} color="#c62828" />
-            <ValueWrapper>
-              <Text>Perdida</Text>
-              <ValueText>R$ 4.300,00</ValueText>
-            </ValueWrapper>
-          </ItemWrapper>
-
-          <ItemWrapper>
-            <SquareNumber number={2} color="#1976d2" />
-            <ValueWrapper>
-              <Text>Abertas</Text>
-              <ValueText>Diversas moedas</ValueText>
-            </ValueWrapper>
-          </ItemWrapper>
-
-          <ItemWrapper>
-            <SquareNumber number={0} color="#5a5a5a" />
-            <ValueWrapper>
-              <Text>Descartadas</Text>
-              <ValueText>-</ValueText>
-            </ValueWrapper>
-          </ItemWrapper>
-        </OpportunitiesWrapper>
-
-        <SeeAll>
-          <p>ver todas as oportunidades</p>
-        </SeeAll>
+          <SeeAll>
+            <p>ver todas as oportunidades</p>
+          </SeeAll>
+        </Wrapper>
       </Section>
     </Container>
   );

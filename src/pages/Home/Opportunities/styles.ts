@@ -54,6 +54,7 @@ export const SeeAll = styled.div`
   align-items: center;
   margin-left: 20px;
   margin-top: 20px;
+  cursor: pointer;
 
   p {
     color: #4691db;
