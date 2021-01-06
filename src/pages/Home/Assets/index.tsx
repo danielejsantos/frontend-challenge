@@ -3,6 +3,7 @@ import React from "react";
 import Section from "../../../components/Section";
 import SectionTitle from "../../../components/SectionTitle";
 import SquareNumber from "../../../components/SquareNumber";
+import useAssets from "./hooks";
 
 import {
   Container,
@@ -12,38 +13,22 @@ import {
   AssetsStatus,
 } from "./styles";
 
-const mocky = [
-  {
-    status: "Vencidos",
-    number: 1,
-    value: "R$3.105,00",
-    color: "red",
-  },
-  {
-    status: "A Vencer",
-    number: 2,
-    value: "R$3.105,00",
-    color: "orange",
-  },
-  {
-    status: "Pagos",
-    number: 2,
-    value: "R$3.105,00",
-    color: "green",
-  },
-];
+const Assets: React.FC = () => {
+  const { assets, mapColorByStatus } = useAssets();
 
-const Activities: React.FC = () => {
   return (
     <Container>
       <Section>
         <SectionTitle title="Títulos financeiros" />
-        {mocky.map((item) => (
-          <AssetsContainer>
-            <SquareNumber number={item.number} color={item.color} />
+        {assets.map((item) => (
+          <AssetsContainer key={item.status}>
+            <SquareNumber
+              number={item.amount}
+              color={mapColorByStatus(item.status).color}
+            />
             <AssetsStatusContainer>
               <AssetsValue>{item.value}</AssetsValue>
-              <AssetsStatus>{item.status}</AssetsStatus>
+              <AssetsStatus>{mapColorByStatus(item.status).name}</AssetsStatus>
             </AssetsStatusContainer>
           </AssetsContainer>
         ))}
@@ -52,4 +37,4 @@ const Activities: React.FC = () => {
   );
 };
 
-export default Activities;
+export default Assets;
