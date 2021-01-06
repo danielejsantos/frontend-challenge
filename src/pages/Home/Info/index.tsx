@@ -2,6 +2,7 @@ import React from "react";
 
 import Section from "../../../components/Section";
 import SectionTitle from "../../../components/SectionTitle";
+import useInfo from "./hooks";
 
 import {
   Container,
@@ -27,6 +28,8 @@ import {
 } from "./styles";
 
 const Info: React.FC = () => {
+  const { userInfo } = useInfo();
+
   return (
     <Container>
       <Section>
@@ -37,10 +40,10 @@ const Info: React.FC = () => {
               <Avatar />
             </AvatarWrapper>
             <ProfileInfo>
-              <CustomerName>Justine Robinson</CustomerName>
-              <Text>Acme inc</Text>
+              <CustomerName>{userInfo.name}</CustomerName>
+              <Text>{userInfo.company}</Text>
               <ActiveStatus>
-                <p>Ativo</p>
+                <p>{userInfo.status}</p>
               </ActiveStatus>
             </ProfileInfo>
           </ProfileContainer>
@@ -48,7 +51,7 @@ const Info: React.FC = () => {
           <ContactContainer>
             <PhoneIcon />
             <ContactWrapper>
-              <Text>45 9 9555 5555</Text>
+              <Text>{userInfo.phone}</Text>
               <SmallText>Celular</SmallText>
             </ContactWrapper>
           </ContactContainer>
@@ -56,7 +59,7 @@ const Info: React.FC = () => {
           <ContactContainer>
             <EmailIcon />
             <ContactWrapper>
-              <Text>justine@email.com</Text>
+              <Text>{userInfo.email}</Text>
               <SmallText>Trabalho</SmallText>
             </ContactWrapper>
           </ContactContainer>

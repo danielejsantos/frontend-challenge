@@ -25,8 +25,6 @@ export const Wrapper = styled.div`
 export const ProfileContainer = styled.div`
   display: flex;
   align-items: center;
-  margin-top: 10px;
-  margin-bottom: 15px;
 `;
 
 export const AvatarWrapper = styled.div`
@@ -37,12 +35,33 @@ export const AvatarWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @media (min-height: 680px) {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 10px;
+  }
+
+  @media (min-height: 700px) {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 10px;
+  }
 `;
 
 export const Avatar = styled(BsPersonFill)`
   width: 40px;
   height: 40px;
   fill: #fff;
+
+  @media (min-height: 680px) {
+    width: 50px;
+    height: 50px;
+  }
+  @media (min-height: 700px) {
+    width: 60px;
+    height: 60px;
+  }
 `;
 
 export const ProfileInfo = styled.div`
@@ -54,10 +73,24 @@ export const ProfileInfo = styled.div`
 export const CustomerName = styled.p`
   color: #5a5a5a;
   font-size: 15px;
+
+  @media (min-height: 680px) {
+    font-size: 16px;
+  }
+  @media (min-height: 700px) {
+    font-size: 17px;
+  }
 `;
 
 export const Text = styled(CustomerName)`
   font-size: 13px;
+
+  @media (min-height: 680px) {
+    font-size: 14px;
+  }
+  @media (min-height: 700px) {
+    font-size: 15px;
+  }
 `;
 
 export const ActiveStatus = styled.div`
@@ -123,6 +156,13 @@ export const ContactWrapper = styled.div`
 
 export const SmallText = styled(Text)`
   font-size: 11px;
+
+  @media (min-height: 680px) {
+    font-size: 12px;
+  }
+  @media (min-height: 700px) {
+    font-size: 13px;
+  }
 `;
 
 export const SocialWrapper = styled.div`
