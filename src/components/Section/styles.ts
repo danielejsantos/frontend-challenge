@@ -5,5 +5,5 @@ export const Container = styled.div`
   background-color: #fff;
   box-shadow: 0px 0px 8px 2px rgba(204,204,204,0.75);
   height: 100%;
-  overflow: hidden;
+  overflow-y: auto;
 `;

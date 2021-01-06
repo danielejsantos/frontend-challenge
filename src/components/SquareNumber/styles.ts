@@ -7,7 +7,7 @@ export const Container = styled.div`
   height: 34px;
   width: 34px;
   background-color: ${({color}) => color};
-  border-radius: 5px;
+  border-radius: 6px;
 `;
 
 export const Number = styled.p`
