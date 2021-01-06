@@ -10,7 +10,7 @@ import Timeline from "../../../components/Timeline";
 import {
   Container,
   Search,
-  SearchButton,
+  SearchWrapper,
   SearchInput,
   SearchIcon,
   TitleButtonContainer,
@@ -19,39 +19,49 @@ import {
 } from "./styles";
 
 const Activities: React.FC = () => {
-  const { titles, selected, setSelected, filterActivities } = useAcitivity();
-
-  console.log(filterActivities());
+  const {
+    titles,
+    selected,
+    setSelected,
+    filteredActivities,
+    mapActivityByTitle,
+    setSearch,
+  } = useAcitivity();
 
   return (
     <Container>
       <Section>
         <SectionTitle title="Atividades" />
         <Search>
-          <SearchButton>
+          <SearchWrapper>
             <SearchIcon />
-          </SearchButton>
-          <SearchInput placeholder="Pesquisar..." />
+          </SearchWrapper>
+          <SearchInput
+            onChange={(e) => setSearch(e.target.value)}
+            placeholder="Pesquisar..."
+          />
         </Search>
         <TitleButtonContainer>
           {titles.map((item) => (
             <TitleButton
               key={item.title}
-              selected={selected === item.title}
-              onClick={() => setSelected(item.title)}
+              selected={selected === item.name}
+              onClick={() => setSelected(item.name)}
             >
               <SquareNumber number={5} color={item.color} />
               <TitleDescription>{item.title}</TitleDescription>
             </TitleButton>
           ))}
         </TitleButtonContainer>
-        {filterActivities().map((item) => {
+        {filteredActivities?.map((item: any) => {
+          if (item.activity.length === 0) return <div key={item.title} />;
+
           return (
             <Timeline
-              key={item.id}
-              circleColor={item.color}
-              title={item.title}
-              activities={item.activities}
+              key={item.title}
+              color={mapActivityByTitle(item.title).color}
+              title={mapActivityByTitle(item.title).name}
+              activities={item.activity}
             />
           );
         })}

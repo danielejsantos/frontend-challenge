@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 import {AiOutlineSearch} from 'react-icons/ai';
-import {FaPhoneAlt} from 'react-icons/fa';
 
 import { TitleButtonProps } from './types';
 
@@ -18,12 +17,11 @@ export const Search = styled.div`
   border: 1px solid grey;
 `;
 
-export const SearchButton = styled.button`
+export const SearchWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 4px 6px;
-  cursor: pointer;
 `;
 
 export const SearchInput = styled.input`
@@ -32,12 +30,6 @@ export const SearchInput = styled.input`
 
 export const SearchIcon = styled(AiOutlineSearch)`
   color: #4f4f4f;
-  width: 18px;
-  height: 18px;
-`;
-
-export const PhoneIcon = styled(FaPhoneAlt)`
-  color: red;
   width: 18px;
   height: 18px;
 `;
@@ -55,6 +47,7 @@ export const TitleButton = styled.button<TitleButtonProps>`
   align-items: center;
   justify-content: center;
   background-color: ${({selected}) => selected ? 'lightgrey' : 'white'};
+  border-radius: 6px;
   cursor: pointer;
 `;
 

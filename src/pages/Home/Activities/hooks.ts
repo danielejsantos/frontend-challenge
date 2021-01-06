@@ -1,124 +1,57 @@
 import { useState } from 'react';
-import {PhoneIcon} from './styles';
 
-const mocky = [
-  {
-    id: 1,
-    color: "red",
-    title: "Atividades em atraso",
-    activities: [
-      {
-        id: 1,
-        Icon: PhoneIcon,
-        title: "Ligação de agendamento de reunião",
-        name: "Erica Collins",
-        time: "Em atraso por 04 dias",
-      },
-    ],
-  },
-  {
-    id: 2,
-    color: "yellow",
-    title: "Atividades previstas",
-    activities: [
-      {
-        id: 1,
-        Icon: PhoneIcon,
-        title: "Ligação de agendamento de reunião",
-        name: "Erica Collins",
-        time: "Em atraso por 04 dias",
-      },
-      {
-        id: 2,
-        Icon: PhoneIcon,
-        title: "Ligação de agendamento de reunião",
-        name: "Erica Collins",
-        time: "Em atraso por 04 dias",
-      },
-      {
-        id: 3,
-        Icon: PhoneIcon,
-        title: "Ligação de agendamento de reunião",
-        name: "Erica Collins",
-        time: "Em atraso por 04 dias",
-      },
-    ],
-  },
-  {
-    id: 3,
-    color: "green",
-    title: "Atividades concluídas",
-    activities: [
-      {
-        id: 1,
-        Icon: PhoneIcon,
-        title: "Ligação de agendamento de reunião",
-        name: "Erica Collins",
-        time: "Em atraso por 04 dias",
-      },
-      {
-        id: 2,
-        Icon: PhoneIcon,
-        title: "Ligação de agendamento de reunião",
-        name: "Erica Collins",
-        time: "Em atraso por 04 dias",
-      },
-      {
-        id: 3,
-        Icon: PhoneIcon,
-        title: "Ligação de agendamento de reunião",
-        name: "Erica Collins",
-        time: "Em atraso por 04 dias",
-      },
-      {
-        id: 4,
-        Icon: PhoneIcon,
-        title: "Ligação de agendamento de reunião",
-        name: "Erica Collins",
-        time: "Em atraso por 04 dias",
-      },
-    ],
-  },
-];
+import activitiesApi from '../../../__mocks__/activities';
 
 const useActivity = () => {
-  const [selected, setSelected] = useState('Total');
+  const [selected, setSelected] = useState('total');
+  const [search, setSearch] = useState('');
+  const [activities] = useState(JSON.parse(activitiesApi));
 
   const titles = [
-    {title: 'Total', color: 'black'},
-    {title: 'Em atraso', color: 'red'}, 
-    {title: 'Em andamento', color: 'blue'},
-    {title: 'Previstas', color: '#e1ad01'},
-    {title: 'Concluídas', color: 'green'}
+    {title: 'Total', color: 'black', name: 'total'},
+    {title: 'Em atraso', color: '#c62828', name: 'late'}, 
+    {title: 'Em andamento', color: '#1976d2', name: 'currently'},
+    {title: 'Previstas', color: '#f9a825', name: 'expected'},
+    {title: 'Concluídas', color: 'green', name: 'concluded'}
   ];
 
   const filterActivities = () => {
-    if (selected !== "Total") {
-      return mocky.filter((activity: any) => {
-        const mapItemByTitle = () => {
-          switch (selected) {
-            case 'Em atraso':
-              return 'Atividades em atraso'
-            case 'Em andamento':
-              return 'Atividades em andamento'
-            case 'Previstas':
-              return 'Atividades previstas'
-            case 'Concluídas':
-              return 'Atividades concluídas'
-          
-            default:
-              break;
-          }
-        }
+    const filteredByTitle = selected === 'total' ? activities :
+      activities.filter((activity: any) => {
+        if (!search) return activity.title === selected;
+        return activity.title === selected;
+      });
 
-        return activity.title === mapItemByTitle()
-      })
-    }
+    const filterActivitiesBySearch = filteredByTitle.map((item: any) => {
+      const filtered = item.activity.filter((item: any) => (
+        item.title.toLowerCase().includes(search.toLowerCase()) ||
+        item.name.toLowerCase().includes(search.toLowerCase()) ||
+        item.time.toLowerCase().includes(search.toLowerCase())
+      ))
 
-    return mocky;
+      return { ...item, activity: filtered }
+    });
+
+    return filterActivitiesBySearch;
   };
 
-  return {selected, setSelected, titles, filterActivities}
+  const mapActivityByTitle = (value: string) => {
+    switch (value) {
+      case 'late':
+        return {name: 'Atividades em atraso', color: '#c62828'}
+      case 'currently':
+        return {name: 'Atividades em andamento', color: '#1976d2'}
+      case 'expected':
+        return {name: 'Atividades previstas', color: '#f9a825'}
+      case 'concluded':
+        return {name: 'Atividades concluídas', color: 'green'}
+    
+      default:
+        return {name: 'Atividades não mapeada', color: 'gray'}
+    }
+  }
+
+  return {selected, setSelected, titles, filteredActivities: filterActivities(), mapActivityByTitle, search, setSearch}
 }
 
 export default useActivity;
