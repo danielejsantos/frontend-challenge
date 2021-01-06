@@ -1,13 +1,12 @@
 export interface Activity {
   id: number;
-  Icon: React.ComponentType;
   title: string;
   name: string;
   time: string;
 }
 
 export interface TimelineProps {
-  circleColor: string;
+  color: string;
   title: string;
   activities: Activity[]
 }
