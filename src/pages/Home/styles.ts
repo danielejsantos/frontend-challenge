@@ -5,6 +5,7 @@ export const Container = styled.div`
   height: 100vh;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 `;
 
 export const Body = styled.div`
@@ -16,8 +17,8 @@ export const Body = styled.div`
 export const CustomerInfo = styled.div`
   display: grid;
   width: 100%;
+  height: 100%;
   padding: 10px;
-  margin-left: 50px;
   grid-template-columns: repeat(2, 1fr) 2fr;
   grid-template-rows: 1fr 0.75fr 1fr;
   gap: 10px;
