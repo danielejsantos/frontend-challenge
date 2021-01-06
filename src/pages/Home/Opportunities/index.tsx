@@ -8,7 +8,6 @@ import useOpportunities from "./hooks";
 
 import {
   Container,
-  Wrapper,
   TitleWrapper,
   InfoIcon,
   OpportunitiesWrapper,
@@ -26,30 +25,28 @@ const Opportunities: React.FC = () => {
   return (
     <Container>
       <Section>
-        <Wrapper>
-          <TitleWrapper>
-            <SectionTitle title="Oportunidades (7)" />
-            <InfoIcon />
-          </TitleWrapper>
-          <OpportunitiesWrapper>
-            {opportunities.map((opportunity: Opportunity) => (
-              <ItemWrapper key={opportunity.name}>
-                <SquareNumber
-                  number={Number(opportunity.amount)}
-                  color={mapOppotunities(opportunity.name).color}
-                />
-                <ValueWrapper>
-                  <Text>{mapOppotunities(opportunity.name).name}</Text>
-                  <ValueText>{opportunity.value}</ValueText>
-                </ValueWrapper>
-              </ItemWrapper>
-            ))}
-          </OpportunitiesWrapper>
+        <TitleWrapper>
+          <SectionTitle title="Oportunidades (7)" />
+          <InfoIcon />
+        </TitleWrapper>
+        <OpportunitiesWrapper>
+          {opportunities.map((opportunity: Opportunity) => (
+            <ItemWrapper key={opportunity.name}>
+              <SquareNumber
+                number={Number(opportunity.amount)}
+                color={mapOppotunities(opportunity.name).color}
+              />
+              <ValueWrapper>
+                <Text>{mapOppotunities(opportunity.name).name}</Text>
+                <ValueText>{opportunity.value}</ValueText>
+              </ValueWrapper>
+            </ItemWrapper>
+          ))}
+        </OpportunitiesWrapper>
 
-          <SeeAll>
-            <p>ver todas as oportunidades</p>
-          </SeeAll>
-        </Wrapper>
+        <SeeAll>
+          <p>ver todas as oportunidades</p>
+        </SeeAll>
       </Section>
     </Container>
   );
